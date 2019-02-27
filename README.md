@@ -1,2 +1,2 @@
-# proxy-gk
-Proxy server for individual development work.
+# andrew-component-proxy
+A proxy server for the product-gallery-summary repo.
