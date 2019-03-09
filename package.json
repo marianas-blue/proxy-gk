@@ -1,5 +1,5 @@
 {
-  "name": "andrew-component-proxy",
+  "name": "proxy-gk",
   "version": "1.0.0",
   "description": "A proxy server for the product-gallery-summary repo.",
   "main": "server.js",
@@ -9,19 +9,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amazonians-110/andrew-component-proxy.git"
+    "url": "https://github.com/marianas-blue/proxy-gk.git"
   },
-  "author": "Andrew Mitchell",
+  "author": "Greg Kittleson",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/amazonians-110/andrew-component-proxy/issues"
+    "url": "https://github.com/marianas-blue/proxy-gk/issues"
   },
-  "homepage": "https://github.com/amazonians-110/andrew-component-proxy#readme",
+  "homepage": "https://github.com/marianas-blue/proxy-gk.git#readme",
   "dependencies": {
     "compression": "^1.7.3",
     "concurrently": "^4.1.0",
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "http-proxy-middleware": "^0.19.1",
     "i": "^0.3.6",
     "serve-favicon": "^2.5.0"
   }
