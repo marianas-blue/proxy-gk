@@ -1,25 +1,23 @@
 const express = require('express');
 const cors = require('cors');
 const compression = require('compression');
-const path = require('path');
-const favicon = require('serve-favicon')
+const PORT = 8080;
 
 const app = express();
-
 app.use(cors());
-
 app.use(compression());
 
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
+app.use(express.static(__dirname + '/public'));
 
-app.use('/files', express.static(`${__dirname}/public`));
+const proxy = require('http-proxy-middleware');
+app.use(
+  '/api/products/',
+  proxy({
+    target: 'http://localhost:3007',
+    changeOrigin: true
+  })
+);
 
-app.get('/products/:id', (req, res) => {
-  res.sendFile(`${__dirname}/public/index.html`);
-});
+app.use('/:id', express.static(__dirname + '/public'));
 
-app.get('*', (req, res) => {
-  res.redirect('/products/1');
-})
-
-app.listen(80);
+app.listen(PORT, () => console.log(`listening at port ${PORT}`));
