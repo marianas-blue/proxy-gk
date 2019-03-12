@@ -14,7 +14,7 @@ const proxy = require('http-proxy-middleware');
 app.use(
   '/api/products/',
   proxy({
-    target: 'http://localhost:3007',
+    target: 'http://ec2-18-221-230-247.us-east-2.compute.amazonaws.com',
     changeOrigin: true
   })
 );
